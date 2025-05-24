@@ -31,13 +31,15 @@ public class substractView extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+//        Conexion del mPlayer
+        mPlayer = MediaPlayer.create(this, R.raw.minecraft_click); // Se llama un sonido para cada boton
 //        Conexion de fieldtext con atributos
         num1 = findViewById(R.id.firstNumber2);
         num2 = findViewById(R.id.secondNumber2);
 //        Conexion de botones con atributos
         backbtn = findViewById(R.id.backBtn2);
         nextBtn = findViewById(R.id.nextBtn2);
-        minusBtn = findViewById(R.id.minusBtn);
+        minusBtn = findViewById(R.id.minusBttn);
 //        Conexion del display tipo texto
         rstView = findViewById(R.id.resultTxt);
 
@@ -47,13 +49,14 @@ public class substractView extends AppCompatActivity {
                 mPlayer.start();
                 String numb1 = num1.getText().toString();
                 String numb2 = num2.getText().toString();
-                int n1 = Integer.parseInt(numb1);
-                int n2 = Integer.parseInt(numb2);
-                int rst = n1 - n2;
-
-                rstView.setText("Resultado: " + rst);
-
-
+                if (numb2 != null && numb2 != null){
+                    int n1 = Integer.parseInt(numb1);
+                    int n2 = Integer.parseInt(numb2);
+                    int rst = n1 - n2;
+                    rstView.setText("Resultado: " + rst);
+                }else{
+                    rstView.setText("Debes primero ingresar los numeros");
+                }
             }
         });
 
