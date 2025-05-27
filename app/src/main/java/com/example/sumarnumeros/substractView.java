@@ -15,7 +15,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class substractView extends AppCompatActivity {
-
     private Button backbtn, nextBtn, minusBtn;
     private EditText num1, num2;
     private TextView rstView;
